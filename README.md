@@ -1,2 +1,2 @@
 # Mapstruct Transfer
-idea plugin mapstruct transfer generate
+idea plugin - mapstruct transfer generate 
