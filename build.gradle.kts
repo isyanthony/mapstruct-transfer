@@ -4,10 +4,23 @@ plugins {
   id("org.jetbrains.intellij") version "1.13.1"
 }
 
+tasks {
+  buildSearchableOptions {
+    enabled = false
+  }
+  compileJava {
+    options.encoding = "UTF-8"
+  }
+  compileTestJava {
+    options.encoding = "UTF-8"
+  }
+}
+
 group = "cn.isyanthony"
 version = "1.0-SNAPSHOT"
 
 repositories {
+  maven("https://maven.aliyun.com/repository/public")
   mavenCentral()
 }
 
@@ -23,11 +36,11 @@ intellij {
 tasks {
   // Set the JVM compatibility versions
   withType<JavaCompile> {
-    sourceCompatibility = "11"
-    targetCompatibility = "11"
+    sourceCompatibility = "17"
+    targetCompatibility = "17"
   }
   withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "11"
+    kotlinOptions.jvmTarget = "17"
   }
 
   patchPluginXml {
@@ -35,13 +48,14 @@ tasks {
     untilBuild.set("232.*")
   }
 
-  signPlugin {
-    certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-    privateKey.set(System.getenv("PRIVATE_KEY"))
-    password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
-  }
 
-  publishPlugin {
-    token.set(System.getenv("PUBLISH_TOKEN"))
-  }
+//  signPlugin {
+//    certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
+//    privateKey.set(System.getenv("PRIVATE_KEY"))
+//    password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
+//  }
+//
+//  publishPlugin {
+//    token.set(System.getenv("PUBLISH_TOKEN"))
+//  }
 }
