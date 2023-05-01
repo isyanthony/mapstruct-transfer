@@ -19,13 +19,15 @@
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.all</depends>
+    <depends>com.intellij.modules.lang</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
     </extensions>
     <actions>
-        <action id="plugins.mapstruct.transfer" class="cn.isyanthony.idea.plugins.mapstruct.transfer.MapStructTransferAction"
+        <action id="plugins.mapstruct.transfer" class="cn.isyanthony.idea.plugins.mapstruct.transfer.action.MapStructTransferAction"
                 text="MSTransfer" description="mapstruct transfer generate">
             <add-to-group group-id="GenerateGroup" anchor="last"/>
         </action>
