@@ -26,8 +26,8 @@
     </extensions>
     <actions>
         <action id="plugins.mapstruct.transfer" class="cn.isyanthony.idea.plugins.mapstruct.transfer.MapStructTransferAction"
-                text="MSTransfer" description="Description">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
+                text="MSTransfer" description="mapstruct transfer generate">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
         </action>
     </actions>
 </idea-plugin>
